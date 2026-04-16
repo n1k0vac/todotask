@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createRoot } from 'react-dom/client';
 import { initializeApp } from 'firebase/app';
 import { 
   getFirestore, 
@@ -48,7 +49,10 @@ const firebaseConfig = {
   appId: "1:608288170073:web:056cb8e6e2c4425b151148",
   measurementId: "G-LQDP02Y66S"
 };
-
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const appId = 'focus-flow-app'; // Tên kho chứa dữ liệu
 const App = () => {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -462,4 +466,5 @@ const App = () => {
   );
 };
 
-export default App;
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
