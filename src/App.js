@@ -39,11 +39,15 @@ import {
 } from 'lucide-react';
 
 // --- Khởi tạo Firebase ---
-const firebaseConfig = JSON.parse(__firebase_config);
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'todo-timer-app';
+const firebaseConfig = {
+  apiKey: "AIzaSyCtwzMGOI4NvYQUdnIixYIV8xW7K61qzdY",
+  authDomain: "workflow-bb753.firebaseapp.com",
+  projectId: "workflow-bb753",
+  storageBucket: "workflow-bb753.firebasestorage.app",
+  messagingSenderId: "608288170073",
+  appId: "1:608288170073:web:056cb8e6e2c4425b151148",
+  measurementId: "G-LQDP02Y66S"
+};
 
 const App = () => {
   const [user, setUser] = useState(null);
